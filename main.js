@@ -92,12 +92,19 @@ clearBtn.addEventListener("click", () => {
   paraElement.innerHTML = calculation;
 });
 
+let bracketCount = 0;
 openBrac.addEventListener("click", () => {
-  calculation = "(";
+  if (bracketCount % 2 === 0) {
+    updateCalculation('(');
+  } else {
+    updateCalculation(')');
+  }
+  bracketCount++;
 });
 
 closeBrac.addEventListener("click", () => {
-  updateCalculation(")");
+  calculation = calculation.slice(0, -1);
+  paraElement.innerHTML = calculation;
 });
 
 dotBtn.addEventListener("click", () => {
@@ -105,6 +112,12 @@ dotBtn.addEventListener("click", () => {
 });
 
 equalBtn.addEventListener("click", () => {
-    calculation = eval(calculation); 
+  try {
+    calculation = eval(calculation);
     paraElement.innerHTML = calculation;
+  } catch (error) {
+    paraElement.innerHTML = 'Error';
+    calculation = '';
+  }
 })
+
