@@ -115,6 +115,7 @@ equalBtn.addEventListener("click", () => {
   try {
     calculation = eval(calculation);
     paraElement.innerHTML = calculation;
+    calculation = eval(calculation) + "";
   } catch (error) {
     paraElement.innerHTML = 'Error';
     calculation = '';
