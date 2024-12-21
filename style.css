@@ -50,6 +50,10 @@ button {
   font-size: 2vw;
 }
 
+.cl_btn {
+  font-size: 1vw;
+}
+
 
 .first, .second, .third, .fourth, .fifth{
   display: flex;
@@ -69,4 +73,4 @@ button {
   button {
     font-size: 3vw;
   }
-}
+  }
